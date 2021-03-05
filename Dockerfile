@@ -1,4 +1,4 @@
-FROM python:3.8-buster
+FROM python:3.9.0-alpine
 
 # set the working directory in the container
 WORKDIR /app
@@ -11,7 +11,7 @@ RUN pip install --upgrade pip
 RUN pip install -r /app/requirements.txt
 
 # copy the content of the local src directory to the working directory
-COPY deep/ .
+COPY play/ .
 
 
 ADD . .
@@ -22,4 +22,4 @@ ADD . .
 # CMD ["gunicorn", "--bind", ":8000", "--workers", "3", "deep.wsgi.application"]
 
 # deploys app
-CMD gunicorn deep.wsgi:application --bind 0.0.0.0:$PORT
+CMD gunicorn play.wsgi:application --bind 0.0.0.0:$PORT
