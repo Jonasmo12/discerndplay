@@ -129,6 +129,8 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
+STATIC_URL = '/static/'
+
 LOGIN_REDIRECT_URL = '/'
 
 
@@ -148,11 +150,11 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = BASE_DIR, 'static'
+
+STATICFILES_DIRS = BASE_DIR, 'static',
 
 STATIC_ROOT = 'static'
-TEMPLATE_DIRS = BASE_DIR, 'templates'
+TEMPLATE_DIRS = BASE_DIR / 'templates',
 
 MEDIA_URL = '/music/'
 
