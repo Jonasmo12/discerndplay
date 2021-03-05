@@ -1,0 +1,30 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    {% block title %} <title>DISCERNDPlay | Music streaming - Your home of deep and soulful house.</title> {% endblock %}
+
+    <link rel="stylesheet" href="{% static 'core.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'icon/css/font-awesome.css' %}" />
+    <script src="{% static 'jquery/jquery.js' %}"></script>
+    
+
+</head>
+
+<body>
+    {% block content %}
+
+    {% endblock %}
+</body>
+
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'jquery/jquery.js' %}"></script>
+
+</html>

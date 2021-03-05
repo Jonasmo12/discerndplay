@@ -1,0 +1,24 @@
+.body, html {
+    background-color: #ffffff !important;
+    color: #222222;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.avatar {
+    background: url('images/1.jpg') center center no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 60vh;
+    color: #fff;
+}
+
+
+.track-list{
+    background-color: #222222;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 16px;
+    box-shadow: 0px -1px 10px -4px rgba(0,0,0,0.75);
+}

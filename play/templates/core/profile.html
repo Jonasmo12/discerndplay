@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %} <title>Deepherance | Profile </title>{% endblock %}
+
+{% block content %}
+
+{% include '_navbar.html' %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <img class="cover" src="{{ artist.coverURL }}" />
+
+        </div>
+
+        <div class="col-lg-8">
+            <p class="lead">
+                {{ artist.name }}
+            </p>
+            <p>
+                {{ artist.bio }} <br><br>
+                <a href="">{{ artist.facebook }}</a> <br>
+                <b>{{ artist.genre }}</b>
+            </p>
+
+            <p class="text-right">
+                <a class="btn btn-sm btn-success" href="{% url 'core:artist_form' %}">edit profile</a>
+            </p>
+
+            <p>
+                <a class="btn btn-sm btn-primary" href="{% url 'core:upload_track' %}">upload mix</a>
+            </p>
+        </div>
+
+    </div>
+</div>
+{% include 'footer.html' %}
+<style>
+    .container {
+        margin-top: 150px;
+        margin-bottom: 150px;
+    }
+
+    .cover {
+        height: 250px;
+        width: 250px;
+        box-shadow: -0px -0px -0px 2px black;
+    }
+</style>
+{% endblock %}

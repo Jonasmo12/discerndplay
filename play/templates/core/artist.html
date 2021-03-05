@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}<title>DEEPHERANCE | {{artist.name}} </title>{% endblock %}
+{% block content %}
+{% include '_navbar.html' %}
+
+<div class="container mb-5" style="padding-top: 100px;">
+    <div class="row">
+        <div class="col-lg-4">
+            <img class="artist-cover-art" src="{{artist.coverURL}}" height="150" width="300" />
+
+            <p class="lead">{{ artist.name }}</p>
+            <p>
+                {{ artist.bio }} <br><br>
+                <b>{{ artist.record_label}}</b> <br>
+                <b>{{ artist.genre }}</b>
+            </p>
+
+            <p style="font-size: 10px;">
+                Active since {{ artist.date_joined}}
+            </p>
+        </div>
+
+        <div class="col-lg-8">
+            {% for track in artist.track_set.all %}
+            <div class="track-list">
+                <h6>
+                    <a href="{% url 'core:track_detail' pk=track.pk %}">{{artist.name}} - {{track.name | title}}</a>
+                </h6>
+                <p>
+                    {{ track.genre | lower }} <br>
+
+                </p>
+
+                <p class="text-right" style="font-size: 10px;">
+                    {{ track.date}}
+                </p>
+            </div>
+            {% endfor %}
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <p>
+                return to <a class="btn btn-sm btn-outline-primary" href="{% url 'core:music' %}">music</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+{% include 'footer.html' %}
+
+
+<style>
+    .artist-cover-art {
+        background: center center no-repeat;
+        background-size: cover;
+        height: 250px;
+        width: 250px;
+        position: relative;
+    }
+</style>
+{% endblock %}

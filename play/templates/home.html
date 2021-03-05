@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% include "_navbar.html" %}
+
+<div class="container-fluid mb-5">
+    <div class="row">
+        <div class="col-lg-12 avatar text-center">
+            <h1 class="landing_h1">Home of deep sounds</h1>
+            <p class="lead">For house heads who are always on the hunt for soul cleansing sounds</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <p class="lead">Featured Playlists</p>
+            <div class="row">
+                {% for playlist in featured_playlist %}      
+                <div class="col-lg-2">
+                    <a href="{% url 'app:playlist' slug=playlist.slug %}">{{playlist.name}}</a>
+                </div> 
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% include 'footer.html' %}
+
+<style>
+    .landing_h1 {
+        padding-top: 120px;
+    }
+
+    .artwork {
+        background: center center no-repeat;
+        background-size: cover;
+        height: 150px;
+        width: 150px;
+        position: relative;
+    }
+
+
+
+    .track-details-p {
+        font-size: 12px;
+        padding-top: 15px;
+    }
+</style>
+{% endblock %}

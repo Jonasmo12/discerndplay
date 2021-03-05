@@ -1,0 +1,39 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="{% url 'app:home' %}">DISCERNDPlay</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'app:home' %}">Home<span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'app:music' %}">Playlists<span class="sr-only"></span></a>
+      </li>
+
+      
+
+    </ul>
+    <div class="form-inline my-2 my-lg-0">
+
+
+
+      {% if request.user.is_authenticated %}
+      <a href="{% url 'account_logout' %}" class="btn btn-sm btn-light">Logout</a>
+
+      {% else %}
+      <a href="{% url 'account_login' %}" class="btn btn-sm btn-light">Login</a>
+
+      {% endif %}
+
+
+
+
+    </div>
+  </div>
+</nav>
