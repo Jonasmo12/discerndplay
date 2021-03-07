@@ -8,7 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Track, Playlist
 
 
-class HomeView(LoginRequiredMixin, View):
+class HomeView(View):
     template_name = 'home.html'
 
     def get(self, request):
