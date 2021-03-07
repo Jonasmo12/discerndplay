@@ -23,13 +23,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    'django.contrib.sites',
- 
-    'allauth',  
-    'allauth.account',   
-    'allauth.socialaccount',   
-    'allauth.socialaccount.providers.google',
     'app',
 
     'storages'
@@ -103,31 +96,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'Africa/Johannesburg'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
-
-
-SITE_ID = 2
-
-# Provider specific settings
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        'SCOPE': [
-            'profile',
-            'email',
-        ],
-        'AUTH_PARAMS': {
-            'access_type': 'online',
-        }
-    }
-}
 
 STATIC_URL = '/static/'
 
@@ -151,9 +124,9 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
 
 
-STATICFILES_DIRS = BASE_DIR, 'static',
+STATICFILES_DIRS = BASE_DIR / 'static',
 
-STATIC_ROOT = 'static'
+STATIC_ROOT = 'staticfiles'
 TEMPLATE_DIRS = BASE_DIR / 'templates',
 
 MEDIA_URL = '/music/'
